@@ -12,6 +12,7 @@ const router = express.Router()
 const app = express()
 const PORT = 3002
 
+
 //accesses middleware
 //parses incoming requests with urlencoded payloads
 app.use(express.urlencoded({ extended: true}));
@@ -74,16 +75,21 @@ connection.connect(function(err) {
 ////////api/////////
 
 //index
-// app.get('/', (req, res) => res.send('Welcome'))
+app.get('/', (req, res) => res.send('Welcome'))
 
 router.use("/api", router); {
 }; 
 
+app.get('/api/products', (req, res) => {
+    connection.query("Select * from products  p LEFT JOIN  price pr ON pr.id = p.id", (err, data) =>{
+        res.send(data)
+    })
+})
 
 //gets and fetch all contacts data
-app.get('api/contacts', (req, res) => {
-    connection.query("SELECT * FROM contacts", [contacts], (err, data) =>{
-        res.json(data)
+app.get('/api/contacts', (req, res) => {
+    connection.query("SELECT * FROM contacts", (err, data) =>{
+        res.send(data)
     })
 })
 
@@ -91,7 +97,7 @@ app.get('api/contacts', (req, res) => {
 app.get('/api/productfilter/:query', (req, res) => {
     let product = req.params.productid
     connection.query("SELECT product_id, product_name FROM products WHERE product_id = ?", [product], (err, data) => {
-        res.json(data)
+        res.send(data)
     })
 })
 
@@ -106,5 +112,3 @@ app.use(function(req, res, next) {
 app.listen(PORT, function () {
     console.log(`Server listening on Port ${PORT}`)
 })
-
-

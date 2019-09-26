@@ -28,7 +28,7 @@ connection.connect(function(err) {
 
     //gets and fetch all of the products and associated prices from products and pricing tables
 router.get('/api/products', (req, res) => {
-    connection.query("SELECT product_id * FROM products JOIN products.products.id, price.products.id", (err, data) =>{
+    connection.query("Select * from products  p LEFT JOIN  price pr ON pr.id = p.id", (err, data) =>{
         res.json(data)
         console.log('hello world')
 
