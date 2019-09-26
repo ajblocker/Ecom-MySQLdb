@@ -2,7 +2,7 @@ import React from 'react'
 
 const Product = props => {
     return (
-        <div className="card" style={{width: '18rem'}}>
+        <div className="card">
             <div className="work-img">
                 <a href="ShopMens"><img className="card-img-top img-fluid" src={props.product.image} alt="pacsun huf shirt"/></a>
                 <div className="img-overlay"></div>

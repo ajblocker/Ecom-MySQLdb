@@ -73,20 +73,30 @@ body, html{
 		
 	}
 }
-	@media (max-width:400px){
+	@media (max-width:375px){
+		.product-header {
+			width: 375px;
+		}
+		.price-filter{
+			padding: 20px;
+			width: 375px;
+		}
+
 		.navbar-brand{
 			display: 'none';
 		}
+
 		.navbar .navbar-nav .nav-link{
 			float: 'right';
 			display: 'block'; 
 		}
+
 		.navbar.responsive a {
 			float: 'none';
 			display: 'block';
 			text-align: 'left';
 		  }
-		} 
+
 		h2{
 			margin: 30px;
 		}
@@ -94,12 +104,13 @@ body, html{
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			margin: 0;
+			width: 375px;
 		}
 		.card-price, .card-header, .card-body{
-			width: 18rem;
 			text-align: center;
 			margin: 15px;
-	}
+	}	
 	.contactHeader{
 		margin: 30px;
 	}
@@ -109,6 +120,8 @@ body, html{
 		.footer{
 			text-align: center;
 		}
+		} 
+
 
 .navbar{
     background-color: rgba(21,31,33,0.5);

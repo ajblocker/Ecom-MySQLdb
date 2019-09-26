@@ -49,8 +49,10 @@ class Products extends React.Component {
           <div className="container-fluid text-center">
             <div className="row">
               <div className="col-12">
-                <h2>THE STASH</h2>
-                <p className="ShopMens">Shop Men's </p>
+                <div className="product-header">
+                  <h2>THE STASH</h2>
+                  <p className="ShopMens">Shop Men's </p>
+                </div>
               </div>
             </div>
             <div className="row">
@@ -96,7 +98,8 @@ class Products extends React.Component {
                     </div>
                   </div>
                 </div>
-                  <div className="row col-12 ml-5">
+              </div>
+              <div className="row">
                   {filteredProducts.map((product, index) => {
                     return (
                       <div key={index}>
@@ -109,7 +112,6 @@ class Products extends React.Component {
                       );
                     })}
                   </div>
-              </div>
             </div>
           </div>
         </div>
