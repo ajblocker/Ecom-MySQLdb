@@ -12,8 +12,7 @@ import './styles.css';
 
 class App extends Component {
   state = {
-    products: [],
-    contacts: []
+    products: []
   }
     componentDidMount(){
       //make GET request to endpoint
@@ -23,7 +22,6 @@ class App extends Component {
       //sets the value of state to the output from the API call
       .then((data) => {
         this.setState({ products: data })
-        this.setState({ contacts: data })
       })
       //logs any error
       .catch(console.log)
@@ -31,7 +29,6 @@ class App extends Component {
   render(){
    
     return (
-      //pass compoent along with products state
       <Router>
         <div>
           <NavBar />
@@ -39,8 +36,6 @@ class App extends Component {
             <Route exact path="/products" component={Products} />
             <Route exact path="/contact" component={Contacts} />
           <Footer />
-          <Products products={this.state.products} />
-          <Contacts contacts={this.state.contacts} />
         </div>
       </Router>
     );

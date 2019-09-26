@@ -1,8 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-const Product = ({products, props}) => {
+const Product = props => {
     return (
-    {products.map((product) => (
         <div className="card" style={{width: '18rem'}}>
             <div className="work-img">
                 <a href="ShopMens"><img className="card-img-top img-fluid" src={props.product.image} alt="pacsun huf shirt"/></a>
@@ -16,8 +15,9 @@ const Product = ({products, props}) => {
                 </ul>
             </div>
         </div>
-        ))}
     )
-};
+}
+
+
 
 export default Product;

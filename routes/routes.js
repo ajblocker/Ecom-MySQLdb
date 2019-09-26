@@ -15,19 +15,19 @@ var connection = mysql.createConnection({
 
 //assign thread identity as owner of connection
 //initialize a new connection
-connection.connect(function(err) {
-    if (err) throw err;
-    console.log("connected as id" + connection.threadId);
- //perform select query
-    connection.query("SELECT product_name, category FROM products", function(err, data){
-        console.table(data)
-    })
+// connection.connect(function(err) {
+//     if (err) throw err;
+//     console.log("connected as id" + connection.threadId);
+//  //perform select query
+//     connection.query("SELECT product_name, category FROM products", function(err, data){
+//         console.table(data)
+//     })
 
-});
+// });
 
 
     //gets and fetch all of the products and associated prices from products and pricing tables
-router.get('/api/products', (req, res) => {
+router.get('/products', (req, res) => {
     connection.query("Select * from products  p LEFT JOIN  price pr ON pr.id = p.id", (err, data) =>{
         res.json(data)
         console.log('hello world')

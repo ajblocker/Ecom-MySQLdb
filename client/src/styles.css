@@ -192,6 +192,15 @@ h1{
 .contactPage {
 	padding: 5rem 0;
 }
+
+.contact-name{
+	float: left;
+	padding-right: 5px;
+}
+.contact-message{
+	float: right;
+	padding-left: 5px;
+}
 /*footer*/
 .footerHeader{
 	padding: 5rem 0;
