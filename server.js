@@ -96,10 +96,9 @@ app.get('/api/contacts', (req, res) => {
 })
 
 //product filter
-app.get('/api/productfilter/:query', (req, res) => {
-    let product = req.params.productid
-    let price = req.params.priceid
-    connection.query("SELECT product_id, product_name FROM products WHERE category = ? AND price = ?", [product], [price], (err, data) => {
+app.get('/api/productfilter/:category', (req, res) => {
+    let category = req.params.category
+    connection.query("SELECT * FROM products WHERE category = ?", [category], (err, data) => {
         res.send(data)
     })
 })

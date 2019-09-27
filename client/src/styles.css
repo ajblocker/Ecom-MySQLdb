@@ -53,11 +53,13 @@ body, html{
 	}
 	.card{
 		width: 10rem;
-		height: 50rem;
+		height: 60rem;
 		margin-left: 50px;
 	}
 	.card-price{
-		width: 18rem;
+		width: 14rem;
+		margin-top: 20px;
+		margin-left: 10px;
 	}
 	.work{
 		position: 'relative';
@@ -89,16 +91,22 @@ body, html{
 		.navbar .navbar-nav .nav-link{
 			float: 'right';
 			display: 'block'; 
+			width: 375px;
 		}
 
 		.navbar.responsive a {
 			float: 'none';
 			display: 'block';
 			text-align: 'left';
+			width: 375px;
 		  }
 
 		h2{
 			margin: 30px;
+		}
+		.d-block w-100{
+			max-width: 100%;
+  			height: auto;
 		}
 		.card{
 			display: flex;
@@ -107,18 +115,21 @@ body, html{
 			margin: 0;
 			width: 375px;
 		}
-		.card-price, .card-header, .card-body{
+		.card-price{
 			text-align: center;
-			margin: 15px;
+			margin-left: 50px;
+			
 	}	
+	
 	.contactHeader{
 		margin: 30px;
 	}
 	.footerHeader{
 		margin: 20px;
+		width: 375px;
 	}
 		.footer{
-			text-align: center;
+			width: 375px;
 		}
 		} 
 
@@ -206,13 +217,17 @@ h1{
 	padding: 5rem 0;
 }
 
+.contacts{
+	margin: 100px;
+	clear: both;
+}
 .contact-name{
 	float: left;
-	padding-right: 5px;
+	
 }
 .contact-message{
-	float: right;
-	padding-left: 5px;
+	float: left;
+
 }
 /*footer*/
 .footerHeader{

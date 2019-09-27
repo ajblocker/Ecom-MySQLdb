@@ -9,40 +9,29 @@ class Main extends React.Component {
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="http://www.pacs-apparrel.com/media/catalog/product/cache/1/image/e8aa4bfade2021a5ce50180a6b98b3df/D/i/Diamond_Supply_Co_Mens_Multi_Pacsun_90S_Colorblock_Denim_Jackets..jpg"
+                src="https://www.pacsun.com/on/demandware.static/-/Sites-pacsun-Library/default/dw33a97d3c/2016/pacsun-denim/desktop/slide2.jpg"
                 alt="First slide"
                 width="100"
                 height="700"
                 />
-                <Carousel.Caption>
-                <h3>Shop Men's</h3>
-                </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="https://images.asos-media.com/products/adidas-originals-mini-trefoil-logo-bodysuit-black/10501540-1-black?$XXL$&wid=513&fit=constrain"
+                src="http://couponash.com/thumbs/coupons/coupon_3afc7d5ac8869f65c4a042908a4a51d4.jpg"
                 alt="Third slide"
                 width="100"
                 height="700"
                 />
-
-                <Carousel.Caption>
-                <h3>Shop Womens</h3>
-                </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="https://houseofheat.co/app/uploads/2019/05/sneaker-culture-is-eating-itself-alive-min-1200x1200.jpg"
+                src="https://i.ytimg.com/vi/iwewfLP5IoU/maxresdefault.jpg"
                 alt="Third slide"
                 width="100"
                 height="700"
                 />
-
-                <Carousel.Caption>
-                <h3>Shop Sneakers</h3>
-                </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
         </div>
