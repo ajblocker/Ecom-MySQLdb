@@ -90,7 +90,7 @@ app.get('/api/products', (req, res) => {
 
 //gets and fetch all contacts data
 app.get('/api/contacts', (req, res) => {
-    connection.query("SELECT contact_name, contact_number, contact_message FROM contacts", (err, data) =>{
+    connection.query("SELECT id, contact_name, contact_number, contact_message FROM contacts", (err, data) =>{
         res.send(data)
     })
 })

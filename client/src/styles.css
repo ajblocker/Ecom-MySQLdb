@@ -104,10 +104,7 @@ body, html{
 		h2{
 			margin: 30px;
 		}
-		.d-block w-100{
-			max-width: 100%;
-  			height: auto;
-		}
+		
 		.card{
 			display: flex;
 			align-items: center;
