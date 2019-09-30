@@ -12,7 +12,7 @@ const frameguard = require('frameguard');
 const router = express.Router()
 
 const app = express()
-const PORT = 3000
+const PORT = 3002
 
 
 //accesses middleware
