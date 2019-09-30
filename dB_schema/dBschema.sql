@@ -22,7 +22,8 @@ CREATE TABLE contacts(
     contact_name VARCHAR(255) NOT NULL,
     contact_address VARCHAR(255) NOT NULL,
     contact_email VARCHAR(25) NOT NULL,
-    contact_number VARCHAR(25) NOT NULL
+    contact_number VARCHAR(25) NOT NULL,
+    contact_message VARCHAR(225) NOT NULL
 );
 
 
@@ -56,16 +57,17 @@ VALUES (35, 1), (44, 2), (65, 3), (59.95, 4), (27.30, 5), (21.00, 6), (42, 7), (
 
 SELECT * FROM price;
 
-INSERT INTO contacts (contact_name, contact_address, contact_email, contact_number)
-VALUES ("Ana Moore", "324 Peachtree Road", "AMoore@gmail.com", "894-424-0984"),
-("Mac Smith", "9039 Singleton Street", "MacSmith89@yahoo.com", "980-576-3496"),
-("Sam Smith", "123 Littletop Road", "SmithS@gmail.com", "546-385-2984"),
-("Cam Bright", "890 Whitewater Lane", "CamBright@gmail.com", "343-598-2457"),
-("Amy Play", "246 Applebottoms Lane", "AmyPlay@yahoo.com", "907-386-2848"),
-("Cameron Right", "975 Sunset Road", "CamR@gmail.com", "957-492-7392"),
-("Jay Ray", "567 Albermare Road", "JayRay98@gmail.com", "293-792-2903"),
-("Jamie Wright", "324 Morehouse Street", "JamieW@yahoo.com", "834-903-4964"),
-("Quin Downey", "2704 AntHill Lane", "QuinDowney@gmail.com", "704-934-9037"),
-("Owen Say", "9023 Sugarcrane Lane", "OwenS90@yahoo.com", "893-389-2839");
+INSERT INTO contacts (contact_name, contact_address, contact_email, contact_number, contact_message)
+VALUES ("Ana Moore", "324 Peachtree Road", "AMoore@gmail.com", "894-424-0984", "Great company, very friendly"),
+("Mac Smith", "9039 Singleton Street", "MacSmith89@yahoo.com", "980-576-3496", "Responds on time, and very friendly"),
+("Sam Smith", "123 Littletop Road", "SmithS@gmail.com", "546-385-2984", "Fast delivery!"),
+("Cam Bright", "890 Whitewater Lane", "CamBright@gmail.com", "343-598-2457", "I wish I had the Pro Plan!!"),
+("Amy Play", "246 Applebottoms Lane", "AmyPlay@yahoo.com", "907-386-2848", "Nice and Friendly"),
+("Cameron Right", "975 Sunset Road", "CamR@gmail.com", "957-492-7392", "Awesome people to work with"),
+("Jay Ray", "567 Albermare Road", "JayRay98@gmail.com", "293-792-2903", "Awesome timing!"),
+("Jamie Wright", "324 Morehouse Street", "JamieW@yahoo.com", "834-903-4964", "Got my package 2 days late"),
+("Quin Downey", "2704 AntHill Lane", "QuinDowney@gmail.com", "704-934-9037", "Great timing, package arrived early!"),
+("Owen Say", "9023 Sugarcrane Lane", "OwenS90@yahoo.com", "893-389-2839", "I love the environment");
+
 
 SELECT * FROM contacts;

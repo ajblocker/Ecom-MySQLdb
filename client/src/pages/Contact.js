@@ -4,7 +4,8 @@ import Forms from '../Components/Forms';
 class Contact extends React.Component {
    
         state = {
-          contacts: []
+          contacts: [],
+          error: false
         }
     
     componentDidMount() {
@@ -17,7 +18,11 @@ class Contact extends React.Component {
         this.setState({ contacts: data })
       })
       //logs any error
-      .catch(console.log)
+      .catch(err => {
+        console.log(err)
+        this.setState({ err })
+      })
+      
     }
     render() {
         const { contacts } = this.state;
@@ -44,20 +49,4 @@ class Contact extends React.Component {
         }
     }
 
-    
-// const Contacts = ({ contacts }) => {
-//     return (
-//         {contacts.map((contact) => (
-//     <div>
-//         <div className="contactHeader">
-//         <h2>Contact us</h2>
-//         <p>Need to get in touch? Fill in the form below for more information</p>
-//         </div>
-//             <div className="forms">
-//                 <Forms />
-//              </div>
-//     </div>
-//         ))}  
-//     );
-// }
     export default Contact;

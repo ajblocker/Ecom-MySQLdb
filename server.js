@@ -12,7 +12,7 @@ const frameguard = require('frameguard');
 const router = express.Router()
 
 const app = express()
-const PORT = 3002
+const PORT = 3000
 
 
 //accesses middleware
@@ -23,11 +23,6 @@ app.use(addRequestId);
 //prevent anyone from putting in an iframe on clickjacking
 app.use(helmet.frameguard({ action: 'deny'}));
 
-
-app.get('/', (req, res) => {
-    console.log('hello world')
-    res.status(200).send()
-})
 
 //object with all defined tokens
 morgan.token('id', function getId(req) {
@@ -58,10 +53,12 @@ app.use(morgan(loggerFormat, {
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
-    user: "root",
-    password: '8325055Ab',
-    database: "dB_schema"
-});
+    user: process.env.DBUSER,
+    password: process.env.MYPASSWORD,
+    database: process.env.DATABASE
+})
+
+
 
 //assign thread identity as owner of connection
 //initialize a new connection
@@ -77,13 +74,21 @@ connection.connect(function(err) {
 ////////api/////////
 
 //index
-app.get('/', (req, res) => res.send('Welcome'))
+app.get('/', (req, res) => {
+    console.log('hello world')
+    res.status(200).send('OK')
+})
 
 app.use("/api", router); {
 }; 
 
+//selects everything from products with matching records in price
+//code will process with return and and stop rest of stript from executing after returning response
 app.get('/api/products', (req, res) => {
     connection.query("Select * from products  p LEFT JOIN  price pr ON pr.id = p.id", (err, data) =>{
+        if (err){
+            return res.status(500).send('The server encountered an unexpected condition which prevented it from fulfilling the request.')
+        }
         res.send(data)
     })
 })
@@ -91,14 +96,21 @@ app.get('/api/products', (req, res) => {
 //gets and fetch all contacts data
 app.get('/api/contacts', (req, res) => {
     connection.query("SELECT id, contact_name, contact_number, contact_message FROM contacts", (err, data) =>{
+        if (err){
+            return res.status(500).send('The server encountered an unexpected condition which prevented it from fulfilling the request.')
+        }
         res.send(data)
     })
 })
 
 //product filter
 app.get('/api/productfilter/:category', (req, res) => {
+    //route parameters
     let category = req.params.category
     connection.query("SELECT * FROM products WHERE category = ?", [category], (err, data) => {
+        if (err){
+            return res.status(500).send('The server encountered an unexpected condition which prevented it from fulfilling the request.')
+        }
         res.send(data)
     })
 })
