@@ -1,7 +1,7 @@
 {
-  "name": "productsapp2",
+  "name": "mySQLdb",
   "version": "1.0.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "description": "This ecom project sells clothing products and combines react, mysql, and nodejs.",
   "main": "server.js",
   "directories": {
     "test": "test"

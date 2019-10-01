@@ -37,13 +37,10 @@ class Contact extends React.Component {
                 </div>
                     <div className="forms">
                         <Forms />
-                        {/* {filteredContacts.map(contacts => (
-                           <div className="col-4">
-                                <p className="contact-name">{contacts.contact_name}:</p>
-                                <p className="contact-message">{contacts.contact_message}</p>
-                            </div>
-                        ))} */}
                     </div>
+            {/* desktop users are normally older and would like to see feedback before they buy clothes for their granchildren/etc.
+            mobile users are traditionally younger and know what they want to buy and don’t normally leave/check feedback
+                     */}
                     <div className="row contacts">
                         {filteredContacts.map(contacts => (
                             <div className="col-4">
