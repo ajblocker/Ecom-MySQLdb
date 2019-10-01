@@ -37,12 +37,20 @@ class Contact extends React.Component {
                 </div>
                     <div className="forms">
                         <Forms />
-                        {filteredContacts.map(contacts => (
-                           <div className="contacts">
+                        {/* {filteredContacts.map(contacts => (
+                           <div className="col-4">
                                 <p className="contact-name">{contacts.contact_name}:</p>
                                 <p className="contact-message">{contacts.contact_message}</p>
                             </div>
-                        ))}
+                        ))} */}
+                    </div>
+                    <div className="row contacts">
+                        {filteredContacts.map(contacts => (
+                            <div className="col-4">
+                                    <p className="contact-name">{contacts.contact_name}:</p>
+                                    <p className="contact-message">{contacts.contact_message}</p>
+                                </div>
+                            ))}
                     </div>
             </div>
         );

@@ -76,6 +76,9 @@ body, html{
 	}
 }
 	@media (max-width:375px){
+		.contacts {
+			display: none;
+		}
 		.product-header {
 			width: 375px;
 		}
@@ -215,17 +218,11 @@ h1{
 }
 
 .contacts{
-	margin: 100px;
-	clear: both;
-}
-.contact-name{
-	float: left;
-	
-}
-.contact-message{
-	float: left;
+	padding-top: 60px;
 
+	margin: 0 230px;
 }
+
 /*footer*/
 .footerHeader{
 	padding: 5rem 0;
