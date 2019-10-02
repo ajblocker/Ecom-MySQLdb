@@ -4,7 +4,7 @@ const express = require('express');
 const mysql = require("mysql");
 //request id to request object log
 const addRequestId = require('express-request-id')();
-//log http request
+//log to http request
 const morgan = require('morgan');
 //helps secure app by setting various http headers
 const helmet = require('helmet');
@@ -23,8 +23,8 @@ app.use(addRequestId);
 //prevent anyone from putting in an iframe on clickjacking
 app.use(helmet.frameguard({ action: 'deny'}));
 
-//??? whats it logging to
 //object with all defined tokens
+//gives id to all requests
 morgan.token('id', function getId(req) {
     return req.id
 });

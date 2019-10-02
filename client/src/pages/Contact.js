@@ -2,12 +2,11 @@ import React from 'react';
 import Forms from '../Components/Forms';
 
 class Contact extends React.Component {
-   
-        state = {
-          contacts: [],
-          error: false
-        }
-    
+    state = {
+        contacts: [],
+        error: false
+    }
+
         //invoked immediately as component mounted
     componentDidMount() {
         //fetch resources to make GET request to endpoint
@@ -28,8 +27,7 @@ class Contact extends React.Component {
     render() {
         const { contacts } = this.state;
         let filteredContacts = contacts;
-
-                
+      
         return (
             <div>
                 <div className="contactHeader">
@@ -47,8 +45,8 @@ class Contact extends React.Component {
                             <div className="col-4">
                                     <p className="contact-name">{contacts.contact_name}:</p>
                                     <p className="contact-message">{contacts.contact_message}</p>
-                                </div>
-                            ))}
+                            </div>
+                        ))}
                     </div>
             </div>
         );

@@ -12,19 +12,25 @@ import './styles.css';
 
 class App extends Component {
   state = {
-    products: []
+    products: [],
+    error: false
   }
+
+  //invoked immediately as component mounted
     componentDidMount(){
-      //make GET request to endpoint
+      //fetch resources to make GET request to endpoint
       fetch('/api/products')
-      //parses the output to JSON
+      //parses the output to JSON, returns promise
       .then(res => res.json())
       //sets the value of state to the output from the API call
       .then((data) => {
         this.setState({ products: data })
       })
       //logs any error
-      .catch(console.log)
+      .catch(err => {
+        console.log(err)
+        this.setState({ err })
+      })
     }
   render(){
    
@@ -40,7 +46,7 @@ class App extends Component {
       </Router>
     );
   }
-  }
+}
   
   
   export default App;
