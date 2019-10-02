@@ -2,6 +2,7 @@
 var expect = require('chai').expect;
 var request = require('request');
 
+//checking datatype
 
 it('returns main page status ok', (done) => {
     request('http://localhost:3002', (error, response, body) =>{

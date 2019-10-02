@@ -23,7 +23,7 @@ app.use(addRequestId);
 //prevent anyone from putting in an iframe on clickjacking
 app.use(helmet.frameguard({ action: 'deny'}));
 
-
+//??? whats it logging to
 //object with all defined tokens
 morgan.token('id', function getId(req) {
     return req.id
@@ -49,7 +49,7 @@ app.use(morgan(loggerFormat, {
     stream: process.stdout
 }));
 
-//creates database connection
+//creates relational database connection
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -75,7 +75,6 @@ connection.connect(function(err) {
 
 //index
 app.get('/', (req, res) => {
-    console.log('hello world')
     res.status(200).send('OK')
 })
 

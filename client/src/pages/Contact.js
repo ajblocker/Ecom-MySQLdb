@@ -8,10 +8,11 @@ class Contact extends React.Component {
           error: false
         }
     
+        //invoked immediately as component mounted
     componentDidMount() {
-        //make GET request to endpoint
+        //fetch resources to make GET request to endpoint
       fetch('/api/contacts')
-      //parses the output to JSON
+      //parses the output to JSON, returns promise
       .then(res => res.json())
       //sets the value of state to the output from the API call
       .then((data) => {
